@@ -10,6 +10,7 @@ Navbar.defaultProps = {
     about: 'About us'
 }
 
+
 export default function Navbar(props) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
