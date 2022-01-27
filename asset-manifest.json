@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/iamshre-yash/TextUtils-ShreYash/static/js/main.3c8074ea.js",
-    "index.html": "/iamshre-yash/TextUtils-ShreYash/index.html",
-    "main.3c8074ea.js.map": "/iamshre-yash/TextUtils-ShreYash/static/js/main.3c8074ea.js.map"
+    "main.js": "/TextUtils-ShreYash/static/js/main.3c8074ea.js",
+    "index.html": "/TextUtils-ShreYash/index.html",
+    "main.3c8074ea.js.map": "/TextUtils-ShreYash/static/js/main.3c8074ea.js.map"
   },
   "entrypoints": [
     "static/js/main.3c8074ea.js"
