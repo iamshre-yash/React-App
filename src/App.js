@@ -28,7 +28,7 @@ function App() {
     const toggelMode =()=>{
         if (mode === 'light') {
             setMode('dark')
-            document.body.style.backgroundColor = 'grey';
+            document.body.style.backgroundColor = '#161c2d';
             showAlert("Dark mode has been enabled", "success")
         }else{
             setMode('light')
