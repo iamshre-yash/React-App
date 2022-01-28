@@ -5,9 +5,10 @@ import Alerts from './components/Alert.js'
 
 function App() {
     const [alert, setAlert] = useState(null);
-    const showAlert = (message) =>{
+    const showAlert = (message,type) =>{
         setAlert({
             msg: message,
+            type: type,
         })
         setTimeout(()=>{
             setAlert(null)
@@ -17,9 +18,7 @@ function App() {
         <>
         <Navbar/>
         <Alerts alert={alert}/>
-        <div className="container my-3">
-         <TextForm showAlert={showAlert} heading="Enter the text to analyze below:"/>
-        </div>
+        <TextForm showAlert={showAlert} heading="Enter the text to analyze below:"/>
         </>
     );
 }
