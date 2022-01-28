@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/TextUtils-ShreYash/static/js/main.dccb9028.js",
+    "main.js": "/TextUtils-ShreYash/static/js/main.2ea387c1.js",
     "index.html": "/TextUtils-ShreYash/index.html",
-    "main.dccb9028.js.map": "/TextUtils-ShreYash/static/js/main.dccb9028.js.map"
+    "main.2ea387c1.js.map": "/TextUtils-ShreYash/static/js/main.2ea387c1.js.map"
   },
   "entrypoints": [
-    "static/js/main.dccb9028.js"
+    "static/js/main.2ea387c1.js"
   ]
 }
