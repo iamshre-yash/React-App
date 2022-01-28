@@ -1,14 +1,12 @@
-import React from 'react';
+import * as React from 'react';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
-export default function Alert(props) {
-    const capitalize =(word) =>{
-        const lower = word.toLowerCase();
-        return lower.charAt(0).toUpperCase() + lower.slice(1);
-    }
+export default function Alerts(props) {
     return (
         <div style={{height: '50px'}}>
-        {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            <strong>{capitalize(props.alert.type)}</strong>: {props.alert.msg}
-        </div>}
+        <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert severity="success">props.alert.msg</Alert>
+        </Stack>
         </div>
-        )};
+    );}

@@ -1,5 +1,13 @@
-import React from 'react';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Stack from '@mui/material/Stack';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import PropTypes from 'prop-types';
+
 
 Navbar.propTypes = {
     title: PropTypes.string
@@ -7,35 +15,39 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
     title: 'TextUtils',
-    about: 'About us'
 }
 
 
+function appBarLabel(label) {
+  return (
+    <Toolbar>
+      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+        <MenuIcon />
+      </IconButton>
+      <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+        {label}
+      </Typography>
+    </Toolbar>
+  );
+}
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
+
 export default function Navbar(props) {
-    return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">{props.title}</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        {/*<li className="nav-item">
-          <a className="nav-link" href="/about">{props.about}</a>
-        </li>*/}
-        </ul>
-      <form className="d-flex">
-      <div className={`form-check form-switch text-${props.mode==='light'?'dark':'white'}`}>
-        <input className="form-check-input" onClick={props.toggelMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-        <label className="form-check-label" Htmlfor="flexSwitchCheckDefault">Dark Mode</label>
-      </div>
-        </form>
-        </div>
-        </div>
-        </nav>
-    );
+  return (
+    <Stack spacing={2} sx={{ flexGrow: 1 }}>
+      <ThemeProvider theme={darkTheme}>
+        <AppBar position="static" color="primary">
+          {appBarLabel(props.title)}
+        </AppBar>
+      </ThemeProvider>
+    </Stack>
+  );
 }
