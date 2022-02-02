@@ -7,9 +7,10 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import IconButton from '@mui/material/IconButton';
+
 
 
 export default function TextForm(props) {
@@ -48,7 +49,7 @@ export default function TextForm(props) {
         setText] = useState('');
 
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
             <Typography variant="h4" align='left' color="text.primary" gutterBottom>
                 {props.heading}
             </Typography>
@@ -59,6 +60,7 @@ export default function TextForm(props) {
                 <IconButton disabled={text.length===0}  aria-label="delete" color="success" onClick={handleCopy}>
                     <ContentCopyIcon fontSize="inherit" />
                 </IconButton>
+                
             </Stack>
             <Box sx={{width: 500,maxWidth: '100%',}}>
             <TextField id="copytext" label="Enter Text -TextUtils" multiline fullWidth maxRows={8} value={text} onChange={handelOnChange} />
